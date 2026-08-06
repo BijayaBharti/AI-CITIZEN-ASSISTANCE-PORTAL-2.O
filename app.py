@@ -935,7 +935,92 @@ TAB_NAMES = [
 
 render_stats_dashboard()
 st.markdown("<br>", unsafe_allow_html=True)
+def hero_banner():
 
+    st.markdown("""
+    <style>
+
+    .hero{
+
+    background:linear-gradient(135deg,#4F46E5,#0EA5E9);
+
+    padding:45px;
+
+    border-radius:28px;
+
+    color:white;
+
+    margin-bottom:25px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+
+    }
+
+    .hero h1{
+
+    color:white;
+
+    font-size:48px;
+
+    font-weight:800;
+
+    }
+
+    .hero p{
+
+    font-size:22px;
+
+    opacity:.95;
+
+    }
+
+    </style>
+
+    """,unsafe_allow_html=True)
+
+    col1,col2=st.columns([3,1])
+
+    with col1:
+
+        st.markdown("""
+
+<div class="hero">
+
+<h1>🏛️ CitizenAI India</h1>
+
+<p>AI Powered Government Assistance Portal</p>
+
+<br>
+
+✅ Smart AI Assistant
+
+<br>
+
+✅ Sarkari Yojana Finder
+
+<br>
+
+✅ OCR Document Reader
+
+<br>
+
+✅ RAG Document Chat
+
+<br>
+
+✅ Complaint Generator
+
+</div>
+
+""",unsafe_allow_html=True)
+
+    with col2:
+
+        st.image(
+        "https://cdn-icons-png.flaticon.com/512/4712/4712027.png",
+        width=280
+        )
+hero_banner()
 tabs = st.tabs(TAB_NAMES)
 
 
