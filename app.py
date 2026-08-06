@@ -1035,6 +1035,32 @@ def top_navbar():
         # ===========================================================
         
         def feature_card(icon, title, description, color):
+            # ==========================================================
+# QUICK ACTION CARD
+# ==========================================================
+
+def quick_action(icon, title, key):
+
+    with st.container(border=True):
+
+        st.markdown(
+            f"""
+            <div style='text-align:center;padding:15px;'>
+
+            <div style='font-size:45px;'>{icon}</div>
+
+            <h4>{title}</h4>
+
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+
+        return st.button(
+            f"Open {title}",
+            key=key,
+            use_container_width=True
+        )
         
             st.markdown(f"""
         
@@ -1279,6 +1305,61 @@ def top_navbar():
                 "#F59E0B"
                 )
             st.markdown("## ⚡ Explore AI Features")
+            st.markdown("---")
+
+st.markdown("## 🚀 Quick Actions")
+
+c1,c2,c3 = st.columns(3)
+
+with c1:
+
+    ai_btn = quick_action(
+        "🤖",
+        "AI Assistant",
+        "qa_ai"
+    )
+
+with c2:
+
+    ocr_btn = quick_action(
+        "📄",
+        "OCR Reader",
+        "qa_ocr"
+    )
+
+with c3:
+
+    rag_btn = quick_action(
+        "📚",
+        "RAG Chat",
+        "qa_rag"
+    )
+
+c4,c5,c6 = st.columns(3)
+
+with c4:
+
+    scheme_btn = quick_action(
+        "🏛️",
+        "Scheme Finder",
+        "qa_scheme"
+    )
+
+with c5:
+
+    complaint_btn = quick_action(
+        "📝",
+        "Complaint",
+        "qa_complaint"
+    )
+
+with c6:
+
+    translator_btn = quick_action(
+        "🌍",
+        "Translator",
+        "qa_translate"
+    )
 
             st.caption("Choose any AI tool below")
             
