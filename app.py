@@ -1361,85 +1361,85 @@ def top_navbar():
                 "qa_translate"
             )
         
-                st.caption("Choose any AI tool below")
-                
-                c1,c2,c3,c4=st.columns(4)
-                
-                with c1:
-                
-                    feature_card(
-                        "🤖",
-                        "AI Assistant",
-                        "Ask any government related question instantly.",
-                        "#4F46E5"
-                    )
-                
-                with c2:
-                
-                    feature_card(
-                        "🪪",
-                        "OCR Reader",
-                        "Extract Aadhaar, PAN, Passport and more.",
-                        "#10B981"
-                    )
-                
-                with c3:
-                
-                    feature_card(
-                        "🏛️",
-                        "Scheme Finder",
-                        "Find eligible government schemes.",
-                        "#F59E0B"
-                    )
-                
-                with c4:
-                
-                    feature_card(
-                        "📚",
-                        "RAG Chat",
-                        "Upload PDF and chat with documents.",
-                        "#3B82F6"
-                    )
-                
-                st.write("")
-                
-                c5,c6,c7,c8=st.columns(4)
-                
-                with c5:
-                
-                    feature_card(
-                        "🔍",
-                        "Live Search",
-                        "Search latest government notifications.",
-                        "#EC4899"
-                    )
-                
-                with c6:
-                
-                    feature_card(
-                        "📝",
-                        "Complaint",
-                        "Generate professional complaint letters.",
-                        "#EF4444"
-                    )
-                
-                with c7:
-                
-                    feature_card(
-                        "✅",
-                        "Checklist",
-                        "Generate document checklist.",
-                        "#22C55E"
-                    )
-                
-                with c8:
-                
-                    feature_card(
-                        "🌍",
-                        "Translator",
-                        "Translate into multiple Indian languages.",
-                        "#8B5CF6"
-                    )
+            st.caption("Choose any AI tool below")
+            
+            c1,c2,c3,c4=st.columns(4)
+            
+            with c1:
+            
+                feature_card(
+                    "🤖",
+                    "AI Assistant",
+                    "Ask any government related question instantly.",
+                    "#4F46E5"
+                )
+            
+            with c2:
+            
+                feature_card(
+                    "🪪",
+                    "OCR Reader",
+                    "Extract Aadhaar, PAN, Passport and more.",
+                    "#10B981"
+                )
+            
+            with c3:
+            
+                feature_card(
+                    "🏛️",
+                    "Scheme Finder",
+                    "Find eligible government schemes.",
+                    "#F59E0B"
+                )
+            
+            with c4:
+            
+                feature_card(
+                    "📚",
+                    "RAG Chat",
+                    "Upload PDF and chat with documents.",
+                    "#3B82F6"
+                )
+            
+            st.write("")
+            
+            c5,c6,c7,c8=st.columns(4)
+            
+            with c5:
+            
+                feature_card(
+                    "🔍",
+                    "Live Search",
+                    "Search latest government notifications.",
+                    "#EC4899"
+                )
+            
+            with c6:
+            
+                feature_card(
+                    "📝",
+                    "Complaint",
+                    "Generate professional complaint letters.",
+                    "#EF4444"
+                )
+            
+            with c7:
+            
+                feature_card(
+                    "✅",
+                    "Checklist",
+                    "Generate document checklist.",
+                    "#22C55E"
+                )
+            
+            with c8:
+            
+                feature_card(
+                    "🌍",
+                    "Translator",
+                    "Translate into multiple Indian languages.",
+                    "#8B5CF6"
+                )
 tabs = st.tabs(TAB_NAMES)
 
 
