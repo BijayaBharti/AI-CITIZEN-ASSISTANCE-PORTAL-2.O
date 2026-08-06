@@ -918,20 +918,27 @@ def transcribe_voice_input(audio_bytes, language="English"):
         return None
 
 
-#=========================================================== 
-# STEP 10: MAIN NAVIGATION
-#===========================================================
-TAB_NAMES = [
-    "💬 AI Assistant",
-    "🪪 OCR Document Reader",
-    "🏛️ Scheme Recommendation",
-    "📚 RAG Chat with Documents",
+# ==========================================================
+# SIDEBAR NAVIGATION
+# ==========================================================
+
+pages = [
+    "🏠 Home",
+    "🤖 AI Assistant",
+    "🪪 OCR Reader",
+    "🏛 Scheme Finder",
+    "📚 RAG Chat",
     "🔎 Live Search",
-    "📝 Complaint Generator",
-    "✅ Document Checklist",
-    "🌐 Translator",
-    "🕘 History",
+    "📝 Complaint",
+    "✅ Checklist",
+    "🌍 Translator",
+    "🕘 History"
 ]
+
+selected_page = st.sidebar.radio(
+    "Navigation",
+    pages
+)
 
 render_stats_dashboard()
 st.markdown("<br>", unsafe_allow_html=True)
@@ -1440,13 +1447,13 @@ def top_navbar():
                     "Translate into multiple Indian languages.",
                     "#8B5CF6"
                 )
-tabs = st.tabs(TAB_NAMES)
+
 
 
 #=========================================================== 
 # TAB 1: AI ASSISTANT (general chat with memory)
 #===========================================================
-with tabs[0]:
+if selected_page == "🤖 AI Assistant":
     st.subheader("💬 AI Citizen Assistant")
     st.caption("Ask general questions about Indian government services, documents, and procedures.")
 
@@ -1485,7 +1492,7 @@ with tabs[0]:
 #=========================================================== 
 # TAB 2: OCR DOCUMENT READER
 #===========================================================
-with tabs[1]:
+if selected_page == "🪪 OCR Reader":
     st.subheader("🪪 OCR Document Reader")
     st.caption("Upload Aadhaar, PAN, Passport, Driving License, Income Certificate (image) or a PDF.")
 
@@ -1539,7 +1546,7 @@ with tabs[1]:
 #=========================================================== 
 # TAB 3: GOVERNMENT SCHEME RECOMMENDATION
 #===========================================================
-with tabs[2]:
+if selected_page == "🏛 Scheme Finder":
     st.subheader("🏛️ Government Scheme Recommendation")
     st.caption("Fill in your profile to get matching government schemes.")
 
@@ -1597,7 +1604,7 @@ with tabs[2]:
 #=========================================================== 
 # TAB 4: RAG CHAT WITH GOVERNMENT DOCUMENTS
 #===========================================================
-with tabs[3]:
+if selected_page == "📚 RAG Chat":
     st.subheader("📚 RAG Chat with Government Documents")
     st.caption("Upload a government PDF (circular, notification, scheme guideline) and ask questions about it.")
 
@@ -1658,7 +1665,7 @@ with tabs[3]:
 #=========================================================== 
 # TAB 5: TAVILY LIVE SEARCH
 #===========================================================
-with tabs[4]:
+if selected_page == "🔎 Live Search":
     st.subheader("🔎 Live Search")
     st.caption("Search the live web for up-to-date government scheme news, deadlines and notifications.")
 
@@ -1704,7 +1711,7 @@ with tabs[4]:
 #=========================================================== 
 # TAB 6: COMPLAINT GENERATOR
 #===========================================================
-with tabs[5]:
+if selected_page == "📝 Complaint":
     st.subheader("📝 Complaint Generator")
     st.caption("Generate a formal complaint letter to a government department.")
 
@@ -1758,7 +1765,7 @@ Format it as a proper formal letter with sender details, date, recipient, subjec
 #=========================================================== 
 # TAB 7: DOCUMENT CHECKLIST GENERATOR
 #===========================================================
-with tabs[6]:
+if selected_page == "✅ Checklist":
     st.subheader("✅ Document Checklist Generator")
     st.caption("Get the exact list of documents required for a government service.")
 
@@ -1794,7 +1801,7 @@ with tabs[6]:
 #=========================================================== 
 # TAB 8: TRANSLATOR
 #===========================================================
-with tabs[7]:
+if selected_page == "🌍 Translator":
     st.subheader("🌐 Translator")
     st.caption("Translate text between English, Hindi, and Hinglish.")
 
@@ -1827,7 +1834,7 @@ with tabs[7]:
 #=========================================================== 
 # TAB 9: HISTORY
 #===========================================================
-with tabs[8]:
+if selected_page == "🕘 History":
     st.subheader("🕘 Activity History")
     st.caption("A unified log of everything you've done across the portal in this session.")
 
@@ -1849,7 +1856,15 @@ with tabs[8]:
         if st.button("🗑️ Clear All History"):
             st.session_state.activity_log = []
             st.rerun()
+if selected_page == "🏠 Home":
 
+    top_navbar()
+
+    hero_banner()
+
+    # Dashboard Cards
+    # Feature Cards
+    # Quick Actions
 
 #=========================================================== 
 # STEP 11: PROFESSIONAL FOOTER
