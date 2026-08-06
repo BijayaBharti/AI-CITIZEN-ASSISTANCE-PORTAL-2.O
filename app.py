@@ -1020,6 +1020,66 @@ def hero_banner():
         "https://cdn-icons-png.flaticon.com/512/4712/4712027.png",
         width=280
         )
+# ===========================================================
+# TOP NAVBAR
+# ===========================================================
+
+def top_navbar():
+
+    from datetime import datetime
+
+    c1, c2, c3 = st.columns([7,1,2])
+
+    with c1:
+
+        st.text_input(
+            "",
+            placeholder="🔍 Search any government service...",
+            key="global_search",
+            label_visibility="collapsed"
+        )
+
+    with c2:
+
+        st.markdown(
+        """
+        <div style="
+        background:#1E293B;
+        border-radius:14px;
+        padding:12px;
+        text-align:center;
+        font-size:28px;
+        ">
+        🔔
+        </div>
+        """,
+        unsafe_allow_html=True
+        )
+
+    with c3:
+
+        st.markdown(f"""
+        <div style="
+        background:#1E293B;
+        padding:14px;
+        border-radius:16px;
+        text-align:center;
+        color:white;
+        ">
+
+        👤 <b>Citizen</b><br>
+
+        <span style="font-size:12px;">
+        {datetime.now().strftime("%d %b %Y")}
+        </span>
+
+        </div>
+
+        """,
+        unsafe_allow_html=True)
+
+    st.markdown("<br>",unsafe_allow_html=True)
+top_navbar()
 hero_banner()
 tabs = st.tabs(TAB_NAMES)
 
