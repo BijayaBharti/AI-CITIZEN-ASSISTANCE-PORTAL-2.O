@@ -1107,258 +1107,258 @@ def top_navbar():
         
             """,unsafe_allow_html=True)
             
-                st.markdown(
-                    f"""
-                    <style>
+            st.markdown(
+                f"""
+                <style>
             
-                    .dashboard-card{{
-                        background:rgba(255,255,255,.08);
-                        backdrop-filter:blur(18px);
-                        border:1px solid rgba(255,255,255,.10);
-                        border-radius:22px;
-                        padding:30px;
-                        transition:.35s;
-                        height:230px;
-                        cursor:pointer;
-                        box-shadow:0 8px 25px rgba(0,0,0,.18);
-                    }}
+                .dashboard-card{{
+                    background:rgba(255,255,255,.08);
+                    backdrop-filter:blur(18px);
+                    border:1px solid rgba(255,255,255,.10);
+                    border-radius:22px;
+                    padding:30px;
+                    transition:.35s;
+                    height:230px;
+                    cursor:pointer;
+                    box-shadow:0 8px 25px rgba(0,0,0,.18);
+                }}
             
-                    .dashboard-card:hover{{
-                        transform:translateY(-10px);
-                        box-shadow:0 18px 45px rgba(0,0,0,.35);
-                    }}
+                .dashboard-card:hover{{
+                    transform:translateY(-10px);
+                    box-shadow:0 18px 45px rgba(0,0,0,.35);
+                }}
             
-                    .dashboard-icon{{
-                        width:70px;
-                        height:70px;
-                        border-radius:50%;
-                        background:{color};
-                        display:flex;
-                        justify-content:center;
-                        align-items:center;
-                        font-size:34px;
-                        margin-bottom:18px;
-                    }}
+                .dashboard-icon{{
+                    width:70px;
+                    height:70px;
+                    border-radius:50%;
+                    background:{color};
+                    display:flex;
+                    justify-content:center;
+                    align-items:center;
+                    font-size:34px;
+                    margin-bottom:18px;
+                }}
             
-                    .dashboard-value{{
-                        font-size:42px;
-                        font-weight:800;
-                        color:white;
-                    }}
-            
-                    .dashboard-title{{
-                        font-size:22px;
-                        font-weight:700;
-                        color:white;
-                        margin-top:5px;
-                    }}
-            
-                    .dashboard-subtitle{{
-                        color:#CBD5E1;
-                        margin-top:10px;
-                    }}
-            
-                    </style>
-            
-                    <div class="dashboard-card">
-            
-                        <div class="dashboard-icon">
-                            {icon}
-                        </div>
-            
-                        <div class="dashboard-value">
-                            {value}
-                        </div>
-            
-                        <div class="dashboard-title">
-                            {title}
-                        </div>
-            
-                        <div class="dashboard-subtitle">
-                            {subtitle}
-                        </div>
-            
-                    </div>
-            
-                    """,
-                    unsafe_allow_html=True
-                )
-            
-                from datetime import datetime
-            
-                c1, c2, c3 = st.columns([7,1,2])
-            
-                with c1:
-            
-                    st.text_input(
-                        "",
-                        placeholder="🔍 Search any government service...",
-                        key="global_search",
-                        label_visibility="collapsed"
-                    )
-            
-                with c2:
-            
-                    st.markdown(
-                    """
-                    <div style="
-                    background:#1E293B;
-                    border-radius:14px;
-                    padding:12px;
-                    text-align:center;
-                    font-size:28px;
-                    ">
-                    🔔
-                    </div>
-                    """,
-                    unsafe_allow_html=True
-                    )
-            
-                with c3:
-            
-                    st.markdown(f"""
-                    <div style="
-                    background:#1E293B;
-                    padding:14px;
-                    border-radius:16px;
-                    text-align:center;
+                .dashboard-value{{
+                    font-size:42px;
+                    font-weight:800;
                     color:white;
-                    ">
+                }}
             
-                    👤 <b>Citizen</b><br>
+                .dashboard-title{{
+                    font-size:22px;
+                    font-weight:700;
+                    color:white;
+                    margin-top:5px;
+                }}
             
-                    <span style="font-size:12px;">
-                    {datetime.now().strftime("%d %b %Y")}
-                    </span>
+                .dashboard-subtitle{{
+                    color:#CBD5E1;
+                    margin-top:10px;
+                }}
             
+                </style>
+            
+                <div class="dashboard-card">
+            
+                    <div class="dashboard-icon">
+                        {icon}
                     </div>
             
-                    """,
-                    unsafe_allow_html=True)
+                    <div class="dashboard-value">
+                        {value}
+                    </div>
             
-                st.markdown("<br>",unsafe_allow_html=True)
-            top_navbar()
-            hero_banner()
-            st.markdown("## 📊 Dashboard Overview")
+                    <div class="dashboard-title">
+                        {title}
+                    </div>
             
-            c1, c2, c3, c4 = st.columns(4)
+                    <div class="dashboard-subtitle">
+                        {subtitle}
+                    </div>
+            
+                </div>
+            
+                """,
+                unsafe_allow_html=True
+            )
+            
+            from datetime import datetime
+            
+            c1, c2, c3 = st.columns([7,1,2])
             
             with c1:
-                dashboard_card(
-                    "Documents",
-                    "0",
-                    "Processed Documents",
-                    "📄",
-                    "#3B82F6"
+            
+                st.text_input(
+                    "",
+                    placeholder="🔍 Search any government service...",
+                    key="global_search",
+                    label_visibility="collapsed"
                 )
             
             with c2:
-                dashboard_card(
-                    "Schemes",
-                    "12",
-                    "Available Schemes",
-                    "🏛️",
-                    "#10B981"
-                )
             
+                st.markdown(
+                """
+                <div style="
+                background:#1E293B;
+                border-radius:14px;
+                padding:12px;
+                text-align:center;
+                font-size:28px;
+                ">
+                🔔
+                </div>
+                """,
+                unsafe_allow_html=True
+                )
+        
             with c3:
-                dashboard_card(
-                    "Languages",
-                    "12",
-                    "Supported Languages",
-                    "🌐",
-                    "#8B5CF6"
+        
+                st.markdown(f"""
+                <div style="
+                background:#1E293B;
+                padding:14px;
+                border-radius:16px;
+                text-align:center;
+                color:white;
+                ">
+        
+                👤 <b>Citizen</b><br>
+        
+                <span style="font-size:12px;">
+                {datetime.now().strftime("%d %b %Y")}
+                </span>
+        
+                </div>
+        
+                """,
+                unsafe_allow_html=True)
+        
+            st.markdown("<br>",unsafe_allow_html=True)
+        top_navbar()
+        hero_banner()
+        st.markdown("## 📊 Dashboard Overview")
+        
+        c1, c2, c3, c4 = st.columns(4)
+        
+        with c1:
+            dashboard_card(
+                "Documents",
+                "0",
+                "Processed Documents",
+                "📄",
+                "#3B82F6"
+            )
+        
+        with c2:
+            dashboard_card(
+                "Schemes",
+                "12",
+                "Available Schemes",
+                "🏛️",
+                "#10B981"
+            )
+        
+        with c3:
+            dashboard_card(
+                "Languages",
+                "12",
+                "Supported Languages",
+                "🌐",
+                "#8B5CF6"
+            )
+        
+        with c4:
+            dashboard_card(
+                "AI Agents",
+                "9",
+                "Smart Assistants",
+                "🤖",
+                "#F59E0B"
                 )
-            
-            with c4:
-                dashboard_card(
-                    "AI Agents",
-                    "9",
-                    "Smart Assistants",
-                    "🤖",
-                    "#F59E0B"
-                    )
-                    st.markdown("## ⚡ Explore AI Features")
+                st.markdown("## ⚡ Explore AI Features")
 
-                    st.caption("Choose any AI tool below")
-                    
-                    c1,c2,c3,c4=st.columns(4)
-                    
-                    with c1:
-                    
-                        feature_card(
-                            "🤖",
-                            "AI Assistant",
-                            "Ask any government related question instantly.",
-                            "#4F46E5"
-                        )
-                    
-                    with c2:
-                    
-                        feature_card(
-                            "🪪",
-                            "OCR Reader",
-                            "Extract Aadhaar, PAN, Passport and more.",
-                            "#10B981"
-                        )
-                    
-                    with c3:
-                    
-                        feature_card(
-                            "🏛️",
-                            "Scheme Finder",
-                            "Find eligible government schemes.",
-                            "#F59E0B"
-                        )
-                    
-                    with c4:
-                    
-                        feature_card(
-                            "📚",
-                            "RAG Chat",
-                            "Upload PDF and chat with documents.",
-                            "#3B82F6"
-                        )
-                    
-                    st.write("")
-                    
-                    c5,c6,c7,c8=st.columns(4)
-                    
-                    with c5:
-                    
-                        feature_card(
-                            "🔍",
-                            "Live Search",
-                            "Search latest government notifications.",
-                            "#EC4899"
-                        )
-                    
-                    with c6:
-                    
-                        feature_card(
-                            "📝",
-                            "Complaint",
-                            "Generate professional complaint letters.",
-                            "#EF4444"
-                        )
-                    
-                    with c7:
-                    
-                        feature_card(
-                            "✅",
-                            "Checklist",
-                            "Generate document checklist.",
-                            "#22C55E"
-                        )
-                    
-                    with c8:
-                    
-                        feature_card(
-                            "🌍",
-                            "Translator",
-                            "Translate into multiple Indian languages.",
-                            "#8B5CF6"
-                        )
+                st.caption("Choose any AI tool below")
+                
+                c1,c2,c3,c4=st.columns(4)
+                
+                with c1:
+                
+                    feature_card(
+                        "🤖",
+                        "AI Assistant",
+                        "Ask any government related question instantly.",
+                        "#4F46E5"
+                    )
+                
+                with c2:
+                
+                    feature_card(
+                        "🪪",
+                        "OCR Reader",
+                        "Extract Aadhaar, PAN, Passport and more.",
+                        "#10B981"
+                    )
+                
+                with c3:
+                
+                    feature_card(
+                        "🏛️",
+                        "Scheme Finder",
+                        "Find eligible government schemes.",
+                        "#F59E0B"
+                    )
+                
+                with c4:
+                
+                    feature_card(
+                        "📚",
+                        "RAG Chat",
+                        "Upload PDF and chat with documents.",
+                        "#3B82F6"
+                    )
+                
+                st.write("")
+                
+                c5,c6,c7,c8=st.columns(4)
+                
+                with c5:
+                
+                    feature_card(
+                        "🔍",
+                        "Live Search",
+                        "Search latest government notifications.",
+                        "#EC4899"
+                    )
+                
+                with c6:
+                
+                    feature_card(
+                        "📝",
+                        "Complaint",
+                        "Generate professional complaint letters.",
+                        "#EF4444"
+                    )
+                
+                with c7:
+                
+                    feature_card(
+                        "✅",
+                        "Checklist",
+                        "Generate document checklist.",
+                        "#22C55E"
+                    )
+                
+                with c8:
+                
+                    feature_card(
+                        "🌍",
+                        "Translator",
+                        "Translate into multiple Indian languages.",
+                        "#8B5CF6"
+                    )
 tabs = st.tabs(TAB_NAMES)
 
 
