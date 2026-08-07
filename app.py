@@ -752,7 +752,7 @@ def get_llm(_api_key, model="gemini-3.5-flash", temperature=0.3):
 
 @st.cache_resource(show_spinner=False)
 def get_embeddings(_api_key):
-    return GoogleGenerativeAIEmbeddings(model="models/embedding-001", google_api_key=_api_key)
+    return GoogleGenerativeAIEmbeddings(model="models/embedding-2", google_api_key=_api_key)
 
 
 @st.cache_resource(show_spinner=False)
