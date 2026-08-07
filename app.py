@@ -746,7 +746,7 @@ if TAVILY_API_KEY:
 # STEP 6: CACHED / SHARED RESOURCES
 #===========================================================
 @st.cache_resource(show_spinner=False)
-def get_llm(_api_key, model="gemini-2.5-flash", temperature=0.3):
+def get_llm(_api_key, model="gemini-3.5-flash", temperature=0.3):
     return ChatGoogleGenerativeAI(model=model, temperature=temperature, google_api_key=_api_key)
 
 
@@ -795,7 +795,7 @@ def extract_text_from_llm_content(content):
     return str(content) if content is not None else ""
 
 
-def safe_llm_invoke(prompt_text, model="gemini-2.5-flash", temperature=0.3):
+def safe_llm_invoke(prompt_text, model="gemini-3.5-flash", temperature=0.3):
     """Invoke the LLM with error handling. Always returns a plain string or None."""
     if not require_google_key():
         return None
