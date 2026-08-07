@@ -14,3 +14,4 @@ pillow>=10.3.0
 numpy>=1.26.4
 fpdf2>=2.7.9
 tavily-python>=0.3.3
+streamlit-mic-recorder
